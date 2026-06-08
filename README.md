@@ -114,7 +114,7 @@ AUC of 0.5 = random guessing = perfect privacy from the attacker's perspective.
 
 ---
 
-## Design Decisions Worth Knowing (for interviews)
+## Design Decisions 
 
 **Why GroupNorm instead of BatchNorm?**
 BatchNorm computes statistics across the batch. In DP-SGD, Opacus needs to clip each sample's gradient *individually* before aggregating. BatchNorm couples samples within a batch, making per-sample gradient computation undefined. GroupNorm normalises within each sample's own channels — fully compatible.
